@@ -1,27 +1,20 @@
-import logo from './logo.svg';
+import { Input } from 'antd';
 import './App.css';
-import { Button } from 'antd';
+import { useForm } from "react-hook-form";
+import { App as AppAntd } from 'antd';
+import CashierApp from './components/CashierApp';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          <Button type='primary'>Click Me</Button>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { message, notification, modal } = AppAntd.useApp();
+
+    return (
+        <div className="flex bg-slate-50 min-h-screen w-full">
+            <div className='w-full lg:w-1/2 mx-auto my-10 bg-slate-100 p-5 rounded-md'>
+                <p className='font-bold text-lg text-center'>Simple Cashier App - Bambang M. Azhari</p>
+                <CashierApp />
+            </div>
+        </div>
+    );
 }
 
 export default App;
